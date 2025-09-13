@@ -76,7 +76,13 @@ const Navbar = () => {
           }} transition={{
             delay: 0.8
           }}>
-              <Button className="cyber-btn-primary">Book a call</Button>
+              <a 
+                href="https://calendly.com/ankitcodex9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button className="cyber-btn-primary">Book a call</Button>
+              </a>
             </motion.div>
           </div>
 
@@ -130,9 +136,16 @@ const Navbar = () => {
               }} transition={{
                 delay: 0.6
               }} className="pt-4">
-                    <Button className="cyber-btn-primary w-full">
-                      Get Started
-                    </Button>
+                    <a 
+                      href="https://calendly.com/ankitcodex9" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button className="cyber-btn-primary w-full">
+                        Book a Call
+                      </Button>
+                    </a>
                   </motion.div>
                 </div>
               </div>

@@ -83,10 +83,20 @@ const Footer = () => {
               </div>
               <div className="mt-4">
                 <a 
-                  href="tel:9540856059" 
+                  href="https://calendly.com/ankitcodex9" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="cyber-btn-primary text-sm px-4 py-2 inline-block mr-2 mb-2"
                 >
                   📅 Schedule a Call
+                </a>
+                <a 
+                  href="https://wa.me/919540856059" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="cyber-btn-secondary text-sm px-4 py-2 inline-block"
+                >
+                  💬 WhatsApp
                 </a>
               </div>
             </div>

@@ -60,14 +60,26 @@ const Hero = () => {
 
         <motion.div variants={textVariants} initial="hidden" animate="visible" className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12">
           <motion.div variants={childVariants}>
-            <Button className="cyber-btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-slate-950">
-              Book Free AI Consultation
-            </Button>
+            <a 
+              href="https://calendly.com/ankitcodex9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button className="cyber-btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-slate-950">
+                Book Free AI Consultation
+              </Button>
+            </a>
           </motion.div>
           <motion.div variants={childVariants}>
-            <Button className="cyber-btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
-              See AI in Action
-            </Button>
+            <a 
+              href="https://wa.me/919540856059" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button className="cyber-btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
+                WhatsApp Demo
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
 

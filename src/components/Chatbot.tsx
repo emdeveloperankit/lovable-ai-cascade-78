@@ -52,8 +52,11 @@ const Chatbot = () => {
       "security": "Absolutely! We use enterprise-grade encryption and are SOC 2 compliant. Your data is completely secure and never shared with third parties.",
       "industries": "AgenticMode works with healthcare, real estate, e-commerce, professional services, SaaS, and many other industries. Our AI adapts to any business model!"
     },
-    pricing: "AgenticMode offers custom pricing tailored to your specific business needs. We don't believe in one-size-fits-all pricing - it's based on your business size, goals, and requirements. Our three main service teams are: 🔊 AI Voice Agents Team, 💬 AI Chatbot Experts, and ⚡ Automation Specialists. Contact us for a personalized proposal and free consultation!",
-    contact: "Ready to get started? 📞 Call us: 9540856059 📅 Book a Free AI Consultation ✉️ Email: hello@agenticmode.com 💬 WhatsApp: 9540856059 for instant responses. Our experts will analyze your business and recommend the best AI solution with no commitment required!",
+    pricing: "AgenticMode offers custom pricing tailored to your specific business needs. We don't believe in one-size-fits-all pricing - it's based on your business size, goals, and requirements. Our three main service teams are: 🔊 AI Voice Agents Team, 💬 AI Chatbot Experts, and ⚡ Automation Specialists. Contact us for a personalized proposal and free consultation! 📅 Book instantly: https://calendly.com/ankitcodex9",
+    contact: "Ready to get started? Here are all the ways to reach us:\n\n📞 **Call us directly**: 9540856059\n💬 **WhatsApp**: https://wa.me/919540856059 (for instant responses)\n📅 **Schedule a call**: https://calendly.com/ankitcodex9\n✉️ **Email**: hello@agenticmode.com\n\nOur experts will analyze your business and recommend the best AI solution with no commitment required!",
+    availability: "We're available to help you:\n\n⏰ **Business Hours**: Monday - Friday, 9 AM - 6 PM (IST)\n📱 **WhatsApp**: 24/7 for quick questions\n📞 **Phone Support**: Business hours\n📅 **Scheduled Calls**: Available 7 days a week\n💬 **Email**: Responses within 24 hours\n\nFor urgent needs, WhatsApp is your fastest option!",
+    whatsapp: "💬 **WhatsApp us instantly**: https://wa.me/919540856059\n\nWe're available 24/7 on WhatsApp for:\n• Quick questions about our services\n• Pricing inquiries\n• Technical support\n• Scheduling consultations\n• Follow-ups on your projects\n\nJust click the link and start chatting - we'll respond quickly!",
+    calendly: "📅 **Book your free consultation**: https://calendly.com/ankitcodex9\n\nSchedule a personalized call to discuss:\n• Your specific business needs\n• AI opportunities in your industry\n• Custom solutions and pricing\n• Implementation timeline\n• ROI projections\n\nPick any time that works for you - we're flexible with scheduling!",
     about: "AgenticMode specializes in AI solutions that save time and boost conversions. We design and deploy AI-powered chatbots, voice agents, and automations that scale your business 10x faster. We handle everything from strategy to deployment - you focus on growth!"
   };
 
@@ -73,7 +76,9 @@ const Chatbot = () => {
       'process', 'results', 'security', 'platform', 'industry', 'technical', 
       'natural', 'complex', 'cost', 'why', 'fast', 'human-like', 'secure',
       'whatsapp', 'instagram', 'facebook', 'crm', 'lead', 'call', 'phone',
-      'email', 'sms', 'workflow', 'business', 'scale', 'efficiency'
+      'email', 'sms', 'workflow', 'business', 'scale', 'efficiency', 'available',
+      'availability', 'calendly', 'schedule', 'appointment', 'when', 'time',
+      'hours', 'support', 'reach', 'connect', 'urgent'
     ];
     
     const isRelevantQuery = agenticModeKeywords.some(keyword => message.includes(keyword));
@@ -154,8 +159,23 @@ const Chatbot = () => {
       return agenticModeKnowledge.faq["industries"];
     }
 
+    // WhatsApp queries
+    if (message.includes("whatsapp") || message.includes("whats app") || message.includes("chat") || message.includes("message")) {
+      return agenticModeKnowledge.whatsapp;
+    }
+
+    // Calendly/Scheduling queries
+    if (message.includes("schedule") || message.includes("book") || message.includes("calendly") || message.includes("appointment") || message.includes("call") || message.includes("consultation")) {
+      return agenticModeKnowledge.calendly;
+    }
+
+    // Availability queries
+    if (message.includes("available") || message.includes("availability") || message.includes("hours") || message.includes("when") || message.includes("time") || message.includes("support")) {
+      return agenticModeKnowledge.availability;
+    }
+
     // Contact queries
-    if (message.includes("contact") || message.includes("book") || message.includes("consultation") || message.includes("call") || message.includes("email") || message.includes("get started")) {
+    if (message.includes("contact") || message.includes("reach") || message.includes("connect") || message.includes("email") || message.includes("get started")) {
       return agenticModeKnowledge.contact;
     }
 
@@ -165,7 +185,7 @@ const Chatbot = () => {
     }
 
     // Default response for AgenticMode-related queries
-    return "I'm here to help you learn about AgenticMode's AI solutions! You can ask me about:\n\n• Our AI Voice Agents, Chatbots & Automations\n• Setup process & timeline\n• Pricing & consultation\n• Results & success stories\n• Technical details & security\n• How to get started\n\nWhat specific aspect interests you most?";
+    return "I'm here to help you learn about AgenticMode's AI solutions! You can ask me about:\n\n• Our AI Voice Agents, Chatbots & Automations\n• Setup process & timeline\n• Pricing & consultation\n• Results & success stories\n• Technical details & security\n• Contact information & availability\n• WhatsApp & Calendly booking\n• How to get started\n\nWhat specific aspect interests you most?";
   };
 
   const handleSendMessage = async () => {

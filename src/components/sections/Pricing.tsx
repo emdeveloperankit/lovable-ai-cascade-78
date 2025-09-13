@@ -126,13 +126,16 @@ const Pricing = () => {
               </motion.div>
 
               <div className="text-center">
-                <motion.button whileHover={{
-              scale: 1.05
-            }} whileTap={{
-              scale: 0.95
-            }} className={service.popular ? 'cyber-btn-primary w-full' : 'cyber-btn-secondary w-full'}>
+                <motion.a 
+                  href={service.cta.includes("Consultation") ? "https://calendly.com/ankitcodex9" : "https://wa.me/919540856059"}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }} 
+                  className={`${service.popular ? 'cyber-btn-primary' : 'cyber-btn-secondary'} w-full inline-block text-center`}
+                >
                   {service.cta}
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>)}
         </motion.div>

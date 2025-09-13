@@ -32,8 +32,16 @@ const Contact = () => {
               <div className="cyber-card text-center">
                 <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h4 className="text-xl font-bold text-foreground mb-2">📱 Call Us Directly</h4>
-                <a href="tel:9540856059" className="text-2xl font-black text-primary cyber-glow hover:text-accent transition-colors">
+                <a href="tel:9540856059" className="text-2xl font-black text-primary cyber-glow hover:text-accent transition-colors mb-4 block">
                   📞 9540856059
+                </a>
+                <a 
+                  href="https://wa.me/919540856059" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="cyber-btn-secondary text-sm px-4 py-2 inline-block"
+                >
+                  💬 WhatsApp
                 </a>
               </div>
 
@@ -42,9 +50,14 @@ const Contact = () => {
                 <Calendar className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h4 className="text-xl font-bold text-foreground mb-2">📅 Schedule a Call</h4>
                 <p className="text-cyber-blue mb-4">Pick a time that works best for you:</p>
-                <button className="cyber-btn-primary">
+                <a 
+                  href="https://calendly.com/ankitcodex9" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="cyber-btn-primary inline-block"
+                >
                   👉 Book Your Strategy Call
-                </button>
+                </a>
               </div>
             </div>
 

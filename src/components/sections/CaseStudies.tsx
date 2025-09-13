@@ -117,12 +117,22 @@ const CaseStudies = () => {
               - CEO, Real Estate Agency
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="cyber-btn-primary">
+              <a 
+                href="https://calendly.com/ankitcodex9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="cyber-btn-primary inline-block"
+              >
                 Book Free Consultation
-              </button>
-              <button className="cyber-btn-secondary">
-                See More Results
-              </button>
+              </a>
+              <a 
+                href="https://wa.me/919540856059" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="cyber-btn-secondary inline-block"
+              >
+                WhatsApp for Results
+              </a>
             </div>
           </div>
         </motion.div>

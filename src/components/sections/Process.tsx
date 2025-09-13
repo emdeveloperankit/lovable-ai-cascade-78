@@ -117,9 +117,14 @@ const Process = () => {
             <p className="text-lg text-primary font-bold mb-4">
               Ready to 10x your business with AI?
             </p>
-            <button className="cyber-btn-primary">
+            <a 
+              href="https://calendly.com/ankitcodex9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="cyber-btn-primary inline-block"
+            >
               Schedule Your Discovery Call Today
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
