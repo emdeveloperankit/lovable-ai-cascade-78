@@ -10,7 +10,7 @@ const Services = () => {
   });
   const services = [{
     icon: Mic,
-    title: "🔊 AI Voice Agents",
+    title: "AI Voice Agents",
     emoji: "🎤",
     description: "Handle calls, qualify leads, and book meetings automatically",
     features: ["24/7 phone support", "Human-like natural conversations", "Lead qualification & scoring", "Appointment booking automation"]
