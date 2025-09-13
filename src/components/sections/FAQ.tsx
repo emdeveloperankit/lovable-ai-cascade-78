@@ -57,24 +57,20 @@ const FAQ = () => {
             <p className="text-cyber-blue mb-6">
               Our AI experts are here to guide you. Get personalized answers to your specific questions.
             </p>
-            <button 
-              className="cyber-btn-primary mr-4"
-              onClick={() => {
-                const element = document.querySelector('#contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
+            <button className="cyber-btn-primary mr-4" onClick={() => {
+            const element = document.querySelector('#contact');
+            if (element) element.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }}>
               Book a Free Call
             </button>
-            <button 
-              className="cyber-btn-secondary bg-lime-500 hover:bg-lime-400"
-              onClick={() => {
-                const element = document.querySelector('#contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Email Us
-            </button>
+            <button onClick={() => {
+            const element = document.querySelector('#contact');
+            if (element) element.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }} className="cyber-btn-secondary bg-lime-500 hover:bg-lime-400 text-slate-950">Whatsapp us</button>
           </div>
         </div>
       </div>
