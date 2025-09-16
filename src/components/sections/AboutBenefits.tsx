@@ -56,7 +56,7 @@ const AboutBenefits = () => {
               className="feature-card"
             >
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-surface-light rounded-lg flex items-center justify-center text-primary flex-shrink-0">
+                <div className="w-16 h-16 bg-surface rounded-lg flex items-center justify-center text-primary flex-shrink-0">
                   {benefit.icon}
                 </div>
                 <div>

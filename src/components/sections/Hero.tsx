@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-5xl md:text-7xl font-black text-foreground leading-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-tight">
               We Implement AI Systems
               <br />
               <span className="gradient-text">Into Your Business</span>

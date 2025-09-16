@@ -50,8 +50,8 @@ const Footer = () => {
     }
   };
 
-  return (
-    <footer className="bg-surface-dark border-t border-primary/20">
+    return (
+    <footer className="bg-surface border-t border-primary/20">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -62,31 +62,35 @@ const Footer = () => {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <div className="text-3xl font-black text-primary cyber-glow mb-4">
+            <div className="text-3xl font-black text-primary mb-4">
               AGENTICMODE
             </div>
-            <p className="text-cyber-blue mb-6 text-sm leading-relaxed">
+            <p className="text-text-muted mb-6 text-sm leading-relaxed">
               We design and deploy AI-powered chatbots, voice agents, and automations that save time and boost conversions.
             </p>
             <div className="space-y-2">
-              <div className="flex items-center text-cyber-blue text-sm">
+              <div className="flex items-center text-text-muted text-sm">
                 <Mail className="w-4 h-4 mr-2 text-primary" />
-                hello@agenticmode.com
+                <a href="mailto:hello@agenticmode.com" className="hover:text-primary transition-colors">
+                  hello@agenticmode.com
+                </a>
               </div>
-              <div className="flex items-center text-cyber-blue text-sm">
+              <div className="flex items-center text-text-muted text-sm">
                 <Phone className="w-4 h-4 mr-2 text-primary" />
-                📞 9540856059
+                <a href="tel:9540856059" className="hover:text-primary transition-colors">
+                  📞 9540856059
+                </a>
               </div>
-              <div className="flex items-center text-cyber-blue text-sm">
+              <div className="flex items-center text-text-muted text-sm">
                 <MapPin className="w-4 h-4 mr-2 text-primary" />
-                San Francisco, CA
+                India
               </div>
               <div className="mt-4">
                 <a 
                   href="https://calendly.com/ankitcodex9" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="cyber-btn-primary text-sm px-4 py-2 inline-block mr-2 mb-2"
+                  className="btn-primary text-sm px-4 py-2 inline-block mr-2 mb-2"
                 >
                   📅 Schedule a Call
                 </a>
@@ -94,7 +98,7 @@ const Footer = () => {
                   href="https://wa.me/919540856059" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="cyber-btn-secondary text-sm px-4 py-2 inline-block"
+                  className="btn-secondary text-sm px-4 py-2 inline-block"
                 >
                   💬 WhatsApp
                 </a>
@@ -119,7 +123,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-cyber-blue hover:text-primary transition-colors duration-200 text-sm"
+                      className="text-text-muted hover:text-primary transition-colors duration-200 text-sm"
                     >
                       {link.name}
                     </button>
@@ -151,7 +155,7 @@ const Footer = () => {
               </motion.button>
             ))}
           </div>
-          <div className="text-cyber-blue text-sm text-center md:text-right">
+          <div className="text-text-muted text-sm text-center md:text-right">
             <p>&copy; 2024 AgenticMode. All rights reserved.</p>
             <p className="mt-1">Powered by AI • Built for Scale</p>
           </div>

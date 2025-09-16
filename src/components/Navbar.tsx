@@ -4,16 +4,14 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navItems = [{
-    name: "About",
-    href: "#about"
-  }, {
-    name: "Services",
-    href: "#services"
-  }, {
-    name: "Contact",
-    href: "#contact"
-  }];
+  const navItems = [
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Process", href: "#process" },
+    { name: "Results", href: "#results" },
+    { name: "FAQ", href: "#faq" },
+    { name: "Contact", href: "#contact" }
+  ];
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
