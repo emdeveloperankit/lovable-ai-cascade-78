@@ -4,14 +4,25 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Process", href: "#process" },
-    { name: "Results", href: "#results" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#contact" }
-  ];
+  const navItems = [{
+    name: "Services",
+    href: "#services"
+  }, {
+    name: "Process",
+    href: "#process"
+  }, {
+    name: "Results",
+    href: "#results"
+  }, {
+    name: "Pricing",
+    href: "#pricing"
+  }, {
+    name: "FAQ",
+    href: "#faq"
+  }, {
+    name: "Contact",
+    href: "#contact"
+  }];
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -39,7 +50,7 @@ const Navbar = () => {
           x: 0
         }} transition={{
           delay: 0.2
-        }} className="text-2xl font-black text-foreground">
+        }} className="text-2xl font-black text-primary cyber-glow">
             AGENTICMODE
           </motion.div>
 
@@ -53,7 +64,7 @@ const Navbar = () => {
             y: 0
           }} transition={{
             delay: 0.3 + index * 0.1
-          }} onClick={() => scrollToSection(item.href)} className="text-text-muted hover:text-foreground transition-colors duration-200 font-medium">
+          }} onClick={() => scrollToSection(item.href)} className="text-cyber-blue hover:text-primary transition-colors duration-200 font-semibold">
                 {item.name}
               </motion.button>)}
             <motion.div initial={{
@@ -70,7 +81,7 @@ const Navbar = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <Button className="btn-primary">Book Free Call</Button>
+                <Button className="cyber-btn-primary">Book a call</Button>
               </a>
             </motion.div>
           </div>
@@ -103,9 +114,9 @@ const Navbar = () => {
         }} transition={{
           duration: 0.3
         }} className="md:hidden overflow-hidden">
-              <div className="modern-card mt-4 mb-4">
+              <div className="cyber-container mt-4 mb-4">
                 <div className="flex flex-col space-y-4">
-                    {navItems.map((item, index) => <motion.button key={item.name} initial={{
+                  {navItems.map((item, index) => <motion.button key={item.name} initial={{
                 opacity: 0,
                 x: -20
               }} animate={{
@@ -113,7 +124,7 @@ const Navbar = () => {
                 x: 0
               }} transition={{
                 delay: index * 0.1
-              }} onClick={() => scrollToSection(item.href)} className="text-left text-text-muted hover:text-foreground transition-colors duration-200 font-medium py-2">
+              }} onClick={() => scrollToSection(item.href)} className="text-left text-cyber-blue hover:text-primary transition-colors duration-200 font-semibold py-2">
                       {item.name}
                     </motion.button>)}
                   <motion.div initial={{
@@ -131,8 +142,8 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                       className="block"
                     >
-                      <Button className="btn-primary w-full">
-                        Book Free Call
+                      <Button className="cyber-btn-primary w-full">
+                        Book a Call
                       </Button>
                     </a>
                   </motion.div>

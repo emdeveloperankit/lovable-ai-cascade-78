@@ -1,103 +1,140 @@
+import { TrendingUp, Users, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import { TrendingUp, Users, Clock, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const CaseStudies = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const results = [
     {
-      icon: <TrendingUp className="w-8 h-8" />,
+      icon: TrendingUp,
       metric: "+300%",
-      title: "More Leads Captured",
-      description: "AI chatbots automatically qualify and capture leads 24/7",
-      case: "E-commerce Client"
+      title: "More leads captured",
+      description: "with AI chatbot",
+      details: "E-commerce client increased lead capture by implementing 24/7 AI support on their website."
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: Users,
       metric: "40%",
-      title: "Higher Booking Rates", 
-      description: "Voice AI handles objections and books more appointments",
-      case: "Real Estate Agency"
+      title: "Higher call booking rate",
+      description: "using voice AI",
+      details: "Healthcare practice improved appointment bookings with natural voice AI assistant."
     },
     {
-      icon: <Clock className="w-8 h-8" />,
+      icon: Clock,
       metric: "50+",
-      title: "Hours Saved Monthly",
-      description: "Automated workflows handle repetitive tasks perfectly",
-      case: "Healthcare Practice"
+      title: "Hours saved per month",
+      description: "with automations",
+      details: "Real estate agency automated follow-ups and client communication workflows."
     }
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
-    <section id="results" className="py-24 bg-surface">
+    <section ref={ref} id="results" className="py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="section-tag mb-6">
-            PROVEN RESULTS
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
-            Real Businesses, Real Results
+          <h2 className="text-3xl md:text-5xl font-black text-foreground mb-6">
+            Proven 
+            <span className="text-primary cyber-glow"> Results</span>
           </h2>
-          <p className="text-xl text-text-muted max-w-3xl mx-auto">
-            See how our AI solutions transformed businesses like yours
+          <p className="text-lg md:text-xl text-cyber-blue max-w-2xl mx-auto">
+            Real success stories from businesses that chose AgenticMode
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
           {results.map((result, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="feature-card text-center"
+              variants={cardVariants}
+              className="cyber-card text-center group"
             >
-              <div className="w-16 h-16 bg-background rounded-lg flex items-center justify-center text-primary mx-auto mb-6">
-                {result.icon}
-              </div>
-              
-              <div className="stats-number text-4xl mb-2 text-primary">
-                {result.metric}
-              </div>
-              
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {result.title}
-              </h3>
-              
-              <p className="text-text-muted mb-4 leading-relaxed">
-                {result.description}
-              </p>
-              
-              <div className="text-sm text-primary font-medium">
-                {result.case}
+              <div className="mb-6">
+                <result.icon className="w-16 h-16 text-primary mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
+                
+                <div className="text-5xl font-black text-primary cyber-glow mb-2">
+                  {result.metric}
+                </div>
+                
+                <h3 className="text-xl font-bold text-foreground mb-2">
+                  {result.title}
+                </h3>
+                
+                <p className="text-cyber-blue font-semibold mb-4">
+                  {result.description}
+                </p>
+                
+                <p className="text-sm text-cyber-blue">
+                  {result.details}
+                </p>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center"
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+          className="text-center mt-16"
         >
-          <a 
-            href="https://calendly.com/ankitcodex9" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <Button className="btn-primary text-lg px-8 py-4">
-              Get Your Custom Case Study
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </a>
+          <div className="cyber-container max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Join Our Success Stories
+            </h3>
+            <p className="text-lg text-primary font-semibold mb-6">
+              "AgenticMode transformed how we handle leads. Our sales team now closes faster and smarter." 
+              - CEO, Real Estate Agency
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="https://calendly.com/ankitcodex9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="cyber-btn-primary inline-block"
+              >
+                Book Free Consultation
+              </a>
+              <a 
+                href="https://wa.me/919540856059" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="cyber-btn-secondary inline-block"
+              >
+                WhatsApp for Results
+              </a>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
