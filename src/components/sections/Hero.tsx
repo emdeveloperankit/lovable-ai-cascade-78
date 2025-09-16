@@ -39,7 +39,9 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground leading-tight">
               We Implement AI Systems
               <br />
-              <span className="gradient-text">Into Your Business</span>
+              <span className="gradient-text">Business 10x Faster
+
+            </span>
             </h1>
           </motion.div>
 
