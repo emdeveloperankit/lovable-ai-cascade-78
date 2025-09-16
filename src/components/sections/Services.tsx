@@ -10,19 +10,19 @@ const Services = () => {
   });
   const services = [{
     icon: Mic,
-    title: "AI Voice Agents",
+    title: "🔊 AI Voice Agents",
     emoji: "🎤",
     description: "Handle calls, qualify leads, and book meetings automatically",
     features: ["24/7 phone support", "Human-like natural conversations", "Lead qualification & scoring", "Appointment booking automation"]
   }, {
     icon: MessageSquare,
-    title: "AI Chatbots", 
+    title: "💬 AI Chatbots", 
     emoji: "💬",
     description: "24/7 support across Website, WhatsApp, Instagram, and Facebook",
     features: ["Multi-platform integration", "Automated sales & customer support", "Instant and accurate responses", "Lead capture & nurturing"]
   }, {
     icon: Zap,
-    title: "AI Automations",
+    title: "⚡ AI Automations",
     emoji: "⚡",
     description: "Automated email & SMS follow-ups, CRM workflows & integrations",
     features: ["Automated email & SMS sequences", "CRM workflows & integrations", "Data management & processing", "Workflow optimization"]
