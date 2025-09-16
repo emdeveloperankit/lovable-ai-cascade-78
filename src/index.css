@@ -2,66 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cyberpunk AI Services Design System */
+/* Modern Dark AI Business Design System */
 
 @layer base {
   :root {
-    /* Core cyber colors */
-    --background: 193 100% 8%;  /* #001925 */
+    /* Core dark colors */
+    --background: 220 13% 9%;   /* #1a1a1f */
     --foreground: 0 0% 100%;    /* white */
-    --surface: 195 100% 10%;    /* #002733 */
-    --surface-dark: 195 100% 12%; /* #013747 */
+    --surface: 220 13% 12%;     /* #1f1f26 */
+    --surface-light: 220 13% 15%; /* #242429 */
 
-    /* Cyber lime accent */
-    --cyber-lime: 76 88% 58%;   /* #caf438 */
-    --cyber-lime-bright: 76 78% 68%; /* #d3f35f */
+    /* Vibrant accent colors */
+    --brand-green: 158 64% 52%; /* #3dd68c */
+    --brand-green-bright: 158 64% 62%; /* #5fe0a3 */
     
-    /* Orange accent */
-    --cyber-orange: 24 100% 50%; /* #ff7a01 */
+    /* Complementary colors */
+    --brand-blue: 204 100% 59%; /* #1e8fff */
+    --brand-purple: 265 85% 58%; /* #7c3aed */
     
     /* Neutral tones */
-    --cyber-blue: 195 35% 60%;  /* #87a4b6 */
-    --cyber-muted: 195 25% 45%;
+    --text-muted: 220 9% 46%;   /* #6b7280 */
+    --text-light: 220 9% 65%;   /* #9ca3af */
 
     /* Design system mapping */
-    --card: var(--background);
+    --card: var(--surface);
     --card-foreground: var(--foreground);
-    --popover: var(--surface);
+    --popover: var(--surface-light);
     --popover-foreground: var(--foreground);
     
-    --primary: var(--cyber-lime);
+    --primary: var(--brand-green);
     --primary-foreground: var(--background);
     
     --secondary: var(--surface);
-    --secondary-foreground: var(--cyber-lime);
+    --secondary-foreground: var(--brand-green);
     
-    --accent: var(--cyber-orange);
+    --accent: var(--brand-blue);
     --accent-foreground: var(--background);
     
-    --muted: var(--surface);
-    --muted-foreground: var(--cyber-blue);
+    --muted: var(--surface-light);
+    --muted-foreground: var(--text-muted);
     
-    --border: var(--cyber-lime);
+    --border: 220 13% 20%;
     --input: var(--surface);
-    --ring: var(--cyber-lime);
+    --ring: var(--brand-green);
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --radius: 0rem;
+    --radius: 0.75rem;
 
-    /* Cyber gradients */
-    --gradient-cyber: linear-gradient(135deg, hsl(var(--background)), hsl(195 100% 15%));
-    --gradient-lime: linear-gradient(135deg, hsl(var(--cyber-lime)), hsl(var(--cyber-lime-bright)));
-    --gradient-accent: linear-gradient(45deg, hsl(var(--cyber-lime)), hsl(var(--cyber-orange)));
+    /* Modern gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(var(--background)), hsl(var(--surface)));
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-green)), hsl(var(--brand-blue)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--surface)) 0%, hsl(var(--background)) 100%);
     
     /* Shadows and glows */
-    --glow-lime: 0 0 20px hsl(var(--cyber-lime) / 0.5);
-    --glow-orange: 0 0 15px hsl(var(--cyber-orange) / 0.4);
-    --drop-shadow-cyber: 1px 1px 0px hsl(var(--cyber-orange));
+    --glow-green: 0 0 30px hsl(var(--brand-green) / 0.3);
+    --glow-blue: 0 0 25px hsl(var(--brand-blue) / 0.25);
+    --shadow-card: 0 8px 30px hsl(var(--background) / 0.12);
     
     /* Transitions */
-    --transition-cyber: all 0.2s ease-in-out;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -109,7 +110,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-mono overflow-x-hidden;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
   
   html {
@@ -118,75 +120,96 @@
 }
 
 @layer components {
-  /* Cyber Container with angled corners */
-  .cyber-container {
-    @apply bg-background border-l-4 border-primary p-6;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-    transition: var(--transition-cyber);
+  /* Modern Card */
+  .modern-card {
+    @apply bg-surface rounded-lg p-6 border border-border/10;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
   }
   
-  .cyber-container:hover {
-    box-shadow: var(--glow-lime);
-  }
-
-  /* Cyber Input Styles */
-  .cyber-input {
-    @apply w-full bg-surface border-none outline-none p-3 font-bold text-muted-foreground;
-    @apply border-l border-transparent transition-all duration-200 ease-in-out;
-  }
-  
-  .cyber-input:focus {
-    @apply border-l-4 border-primary text-primary;
-  }
-
-  /* Cyber Button Primary */
-  .cyber-btn-primary {
-    @apply bg-primary text-primary-foreground font-bold px-6 py-3;
-    @apply border border-transparent transition-all duration-200 ease-in-out;
-  }
-  
-  .cyber-btn-primary:hover {
-    @apply bg-transparent border-accent text-primary;
-  }
-
-  /* Cyber Button Secondary with angled corner */
-  .cyber-btn-secondary {
-    @apply relative bg-background text-primary font-bold px-6 py-3;
-    @apply transition-all duration-200 ease-in-out;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-    filter: drop-shadow(var(--drop-shadow-cyber));
-  }
-  
-  .cyber-btn-secondary:hover {
-    @apply bg-primary text-primary-foreground;
-  }
-
-  /* Cyber Card */
-  .cyber-card {
-    @apply bg-surface border-l-4 border-primary p-6 transition-all duration-300;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-  }
-  
-  .cyber-card:hover {
-    box-shadow: var(--glow-lime);
+  .modern-card:hover {
+    @apply bg-surface-light;
+    box-shadow: var(--glow-green);
     transform: translateY(-2px);
   }
 
-  /* Glowing text */
-  .cyber-glow {
-    text-shadow: 0 0 10px hsl(var(--cyber-lime) / 0.8);
+  /* Pill Button */
+  .pill-button {
+    @apply px-6 py-3 rounded-full font-semibold text-sm;
+    @apply bg-surface border border-border/20 text-foreground;
+    transition: var(--transition-smooth);
+  }
+  
+  .pill-button:hover {
+    @apply bg-surface-light border-primary/40;
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-full;
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary/90 scale-105;
+    box-shadow: var(--glow-green);
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply bg-surface text-foreground font-semibold px-8 py-3 rounded-full;
+    @apply border border-border/20;
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-surface-light border-primary/40;
+  }
+
+  /* Feature Card */
+  .feature-card {
+    @apply bg-surface rounded-xl p-8 border border-border/10;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .feature-card:hover {
+    @apply bg-surface-light;
+    transform: translateY(-4px);
+    box-shadow: var(--glow-green);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   /* Gradient backgrounds */
-  .gradient-cyber {
-    background: var(--gradient-cyber);
+  .gradient-dark {
+    background: var(--gradient-dark);
   }
   
-  .gradient-lime {
-    background: var(--gradient-lime);
+  .gradient-brand {
+    background: var(--gradient-brand);
   }
   
-  .gradient-accent {
-    background: var(--gradient-accent);
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  /* Stats Number */
+  .stats-number {
+    @apply text-6xl font-black text-foreground;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+  }
+
+  /* Section Tag */
+  .section-tag {
+    @apply inline-flex items-center px-4 py-2 rounded-full;
+    @apply bg-surface border border-border/20 text-sm font-medium;
+    @apply text-muted-foreground;
   }
 }

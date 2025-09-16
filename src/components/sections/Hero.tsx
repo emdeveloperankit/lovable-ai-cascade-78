@@ -1,125 +1,125 @@
-import { Button } from "@/components/ui/button";
-import { Mic, Bot, Zap } from "lucide-react";
 import { motion } from "framer-motion";
-import TypewriterText from "@/components/TypewriterText";
-const Hero = () => {
-  const textVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2
-      }
-    }
-  };
-  const childVariants = {
-    hidden: {
-      opacity: 0,
-      y: 30
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-  const iconVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0
-    },
-    visible: {
-      opacity: 0.6,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        staggerChildren: 0.2
-      }
-    }
-  };
-  return <section className="min-h-screen gradient-cyber flex items-center justify-center relative overflow-hidden pt-20 pb-8">
-      <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-        <motion.div variants={textVariants} initial="hidden" animate="visible" className="mb-6 md:mb-8">
-          <motion.h1 variants={childVariants} className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 text-foreground">
-            <TypewriterText text="AI Agents That Scale Your" speed={100} className="block" />
-            <motion.span variants={childVariants} className="text-primary cyber-glow block mt-2">
-              <TypewriterText text="Business 10x Faster" delay={2000} speed={80} />
-            </motion.span>
-          </motion.h1>
-          <motion.p variants={childVariants} className="text-base md:text-xl lg:text-2xl text-cyber-blue max-w-4xl mx-auto leading-relaxed">
-            <TypewriterText text="We design and deploy AI-powered chatbots, voice agents, and automations that save time and boost conversions." delay={4000} speed={30} />
-          </motion.p>
-        </motion.div>
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Play } from "lucide-react";
 
-        <motion.div variants={textVariants} initial="hidden" animate="visible" className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12">
-          <motion.div variants={childVariants}>
+const Hero = () => {
+  return (
+    <section className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden pt-16">
+      {/* Background gradient */}
+      <div className="absolute inset-0 gradient-dark opacity-50" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center max-w-5xl mx-auto">
+          {/* Header pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12"
+          >
+            <div className="pill-button">
+              ✨ AI AGENTS THAT WORKS
+            </div>
+            <div className="pill-button">
+              AGENTICMODE SOLUTIONS
+            </div>
+            <div className="text-text-muted">
+              hello@agenticmode.com
+            </div>
+          </motion.div>
+
+          {/* Main headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="mb-8"
+          >
+            <h1 className="text-5xl md:text-7xl font-black text-foreground leading-tight">
+              We Implement AI Systems
+              <br />
+              <span className="gradient-text">Into Your Business</span>
+            </h1>
+          </motion.div>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl text-text-muted max-w-3xl mx-auto mb-12"
+          >
+            Automating Business Workflows with AI, Custom-Built for Your Operations
+          </motion.p>
+
+          {/* Step indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mb-8"
+          >
+            <div className="section-tag">
+              Step 1 of 2: Watch Video
+            </div>
+          </motion.div>
+
+          {/* Video placeholder */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="max-w-4xl mx-auto mb-12"
+          >
+            <div className="feature-card group cursor-pointer">
+              <div className="aspect-video bg-gradient-dark rounded-lg flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-brand opacity-10" />
+                <div className="relative z-10 text-center">
+                  <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                    <Play className="w-8 h-8 text-primary-foreground ml-1" />
+                  </div>
+                  <p className="text-2xl font-semibold text-foreground">
+                    See How AI Transforms Your Business
+                  </p>
+                  <p className="text-text-muted mt-2">
+                    Watch real examples of AI automation in action
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="mb-8"
+          >
             <a 
               href="https://calendly.com/ankitcodex9" 
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <Button className="cyber-btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-slate-950">
-                Book Free AI Consultation
+              <Button className="btn-primary text-lg px-12 py-4">
+                Step 2 of 2 - Schedule Your Discovery Call
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </a>
           </motion.div>
-          <motion.div variants={childVariants}>
-            <a 
-              href="https://wa.me/919540856059" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Button className="cyber-btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
-                WhatsApp Demo
-              </Button>
-            </a>
-          </motion.div>
-        </motion.div>
 
-        {/* Floating icons */}
-        <motion.div variants={iconVariants} initial="hidden" animate="visible" className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto">
-          <motion.div variants={childVariants} className="cyber-card p-4">
-            <Mic className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 bg-inherit" />
-            <p className="text-xs md:text-sm text-lime-400 font-semibold">Voice AI</p>
-          </motion.div>
-          <motion.div variants={childVariants} className="cyber-card p-4">
-            <Bot className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2" />
-            <p className="text-xs md:text-sm text-lime-400 font-semibold">Chatbots</p>
-          </motion.div>
-          <motion.div variants={childVariants} className="cyber-card p-4">
-            <Zap className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2" />
-            <p className="text-xs md:text-sm text-lime-400 font-semibold">Automations</p>
-          </motion.div>
-        </motion.div>
+          {/* Bottom text */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="text-text-muted text-sm"
+          >
+            ⚠️ Spots are limited and get filled quickly
+          </motion.p>
+        </div>
       </div>
-      
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div animate={{
-        scale: [1, 1.2, 1],
-        opacity: [0.1, 0.2, 0.1]
-      }} transition={{
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }} className="absolute -top-1/2 -left-1/2 w-full h-full bg-primary/10 rounded-full blur-3xl" />
-        <motion.div animate={{
-        scale: [1.2, 1, 1.2],
-        opacity: [0.1, 0.15, 0.1]
-      }} transition={{
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 2
-      }} className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-accent/10 rounded-full blur-3xl" />
-      </div>
-    </section>;
+    </section>
+  );
 };
 export default Hero;
