@@ -14,16 +14,17 @@ export default {
     },
     extend: {
       colors: {
-        // Cyber color system
+        // Modern dark color system
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         surface: "hsl(var(--surface))",
-        "surface-dark": "hsl(var(--surface-dark))",
-        "cyber-lime": "hsl(var(--cyber-lime))",
-        "cyber-lime-bright": "hsl(var(--cyber-lime-bright))",
-        "cyber-orange": "hsl(var(--cyber-orange))",
-        "cyber-blue": "hsl(var(--cyber-blue))",
-        "cyber-muted": "hsl(var(--cyber-muted))",
+        "surface-light": "hsl(var(--surface-light))",
+        "brand-green": "hsl(var(--brand-green))",
+        "brand-green-bright": "hsl(var(--brand-green-bright))",
+        "brand-blue": "hsl(var(--brand-blue))",
+        "brand-purple": "hsl(var(--brand-purple))",
+        "text-muted": "hsl(var(--text-muted))",
+        "text-light": "hsl(var(--text-light))",
         
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

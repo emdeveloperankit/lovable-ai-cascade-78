@@ -128,7 +128,7 @@
   }
   
   .modern-card:hover {
-    @apply bg-surface-light;
+    @apply bg-surface;
     box-shadow: var(--glow-green);
     transform: translateY(-2px);
   }
@@ -141,7 +141,7 @@
   }
   
   .pill-button:hover {
-    @apply bg-surface-light border-primary/40;
+    @apply bg-surface border-primary/40;
   }
 
   /* Primary Button */
@@ -163,7 +163,7 @@
   }
   
   .btn-secondary:hover {
-    @apply bg-surface-light border-primary/40;
+    @apply bg-surface border-primary/40;
   }
 
   /* Feature Card */
@@ -174,7 +174,7 @@
   }
   
   .feature-card:hover {
-    @apply bg-surface-light;
+    @apply bg-surface;
     transform: translateY(-4px);
     box-shadow: var(--glow-green);
   }
