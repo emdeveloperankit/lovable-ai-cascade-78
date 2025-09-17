@@ -2,26 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cyberpunk AI Services Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Lemon.io Style Design System */
 
 @layer base {
   :root {
-    /* Core cyber colors */
-    --background: 193 100% 8%;  /* #001925 */
-    --foreground: 0 0% 100%;    /* white */
-    --surface: 195 100% 10%;    /* #002733 */
-    --surface-dark: 195 100% 12%; /* #013747 */
+    /* Dark theme colors matching lemon.io */
+    --background: 240 10% 3.9%;      /* #0a0a0b - Very dark background */
+    --foreground: 0 0% 98%;          /* #fafafa - Almost white text */
+    --surface: 240 10% 8%;           /* #141416 - Dark surface */
+    --surface-dark: 240 10% 6%;      /* #0f0f10 - Darker surface */
 
-    /* Cyber lime accent */
-    --cyber-lime: 76 88% 58%;   /* #caf438 */
-    --cyber-lime-bright: 76 78% 68%; /* #d3f35f */
+    /* Bright yellow accent (lemon.io style) */
+    --lemon-yellow: 60 100% 50%;     /* #ffff00 - Bright yellow */
+    --lemon-yellow-bright: 60 100% 60%; /* #ffff33 - Brighter yellow */
     
-    /* Orange accent */
-    --cyber-orange: 24 100% 50%; /* #ff7a01 */
+    /* Secondary accent */
+    --lemon-orange: 39 100% 50%;     /* #ff9900 - Orange accent */
     
     /* Neutral tones */
-    --cyber-blue: 195 35% 60%;  /* #87a4b6 */
-    --cyber-muted: 195 25% 45%;
+    --neutral-light: 240 5% 64.9%;  /* #a1a1aa - Light gray */
+    --neutral-muted: 240 5% 45%;
 
     /* Design system mapping */
     --card: var(--background);
@@ -29,39 +31,39 @@
     --popover: var(--surface);
     --popover-foreground: var(--foreground);
     
-    --primary: var(--cyber-lime);
+    --primary: var(--lemon-yellow);
     --primary-foreground: var(--background);
     
     --secondary: var(--surface);
-    --secondary-foreground: var(--cyber-lime);
+    --secondary-foreground: var(--lemon-yellow);
     
-    --accent: var(--cyber-orange);
+    --accent: var(--lemon-orange);
     --accent-foreground: var(--background);
     
     --muted: var(--surface);
-    --muted-foreground: var(--cyber-blue);
+    --muted-foreground: var(--neutral-light);
     
-    --border: var(--cyber-lime);
+    --border: var(--lemon-yellow);
     --input: var(--surface);
-    --ring: var(--cyber-lime);
+    --ring: var(--lemon-yellow);
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --radius: 0rem;
+    --radius: 12px;
 
-    /* Cyber gradients */
-    --gradient-cyber: linear-gradient(135deg, hsl(var(--background)), hsl(195 100% 15%));
-    --gradient-lime: linear-gradient(135deg, hsl(var(--cyber-lime)), hsl(var(--cyber-lime-bright)));
-    --gradient-accent: linear-gradient(45deg, hsl(var(--cyber-lime)), hsl(var(--cyber-orange)));
+    /* Lemon gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(var(--background)), hsl(var(--surface)));
+    --gradient-yellow: linear-gradient(135deg, hsl(var(--lemon-yellow)), hsl(var(--lemon-yellow-bright)));
+    --gradient-accent: linear-gradient(45deg, hsl(var(--lemon-yellow)), hsl(var(--lemon-orange)));
     
     /* Shadows and glows */
-    --glow-lime: 0 0 20px hsl(var(--cyber-lime) / 0.5);
-    --glow-orange: 0 0 15px hsl(var(--cyber-orange) / 0.4);
-    --drop-shadow-cyber: 1px 1px 0px hsl(var(--cyber-orange));
+    --glow-yellow: 0 0 20px hsl(var(--lemon-yellow) / 0.3);
+    --glow-orange: 0 0 15px hsl(var(--lemon-orange) / 0.3);
+    --shadow-elegant: 0 4px 20px hsl(var(--background) / 0.5);
     
     /* Transitions */
-    --transition-cyber: all 0.2s ease-in-out;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -109,7 +111,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-mono overflow-x-hidden;
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
   }
   
   html {
@@ -118,75 +120,90 @@
 }
 
 @layer components {
-  /* Cyber Container with angled corners */
-  .cyber-container {
-    @apply bg-background border-l-4 border-primary p-6;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-    transition: var(--transition-cyber);
+  /* Modern Container */
+  .modern-container {
+    @apply bg-surface border border-primary/20 p-6 rounded-2xl;
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
   }
   
-  .cyber-container:hover {
-    box-shadow: var(--glow-lime);
+  .modern-container:hover {
+    @apply border-primary/40;
+    box-shadow: var(--glow-yellow);
   }
 
-  /* Cyber Input Styles */
-  .cyber-input {
-    @apply w-full bg-surface border-none outline-none p-3 font-bold text-muted-foreground;
-    @apply border-l border-transparent transition-all duration-200 ease-in-out;
+  /* Modern Input Styles */
+  .modern-input {
+    @apply w-full bg-surface border border-primary/20 rounded-xl outline-none p-4 font-medium text-foreground;
+    @apply transition-all duration-300 ease-in-out;
   }
   
-  .cyber-input:focus {
-    @apply border-l-4 border-primary text-primary;
+  .modern-input:focus {
+    @apply border-primary;
+    box-shadow: var(--glow-yellow);
   }
 
-  /* Cyber Button Primary */
-  .cyber-btn-primary {
-    @apply bg-primary text-primary-foreground font-bold px-6 py-3;
-    @apply border border-transparent transition-all duration-200 ease-in-out;
+  /* Modern Button Primary */
+  .modern-btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-xl;
+    @apply transition-all duration-300 ease-in-out;
+    box-shadow: 0 4px 14px hsl(var(--primary) / 0.3);
   }
   
-  .cyber-btn-primary:hover {
-    @apply bg-transparent border-accent text-primary;
+  .modern-btn-primary:hover {
+    @apply bg-primary/90;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px hsl(var(--primary) / 0.4);
   }
 
-  /* Cyber Button Secondary with angled corner */
-  .cyber-btn-secondary {
-    @apply relative bg-background text-primary font-bold px-6 py-3;
-    @apply transition-all duration-200 ease-in-out;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-    filter: drop-shadow(var(--drop-shadow-cyber));
+  /* Modern Button Secondary */
+  .modern-btn-secondary {
+    @apply bg-surface text-primary font-semibold px-8 py-4 rounded-xl;
+    @apply border border-primary/20 transition-all duration-300 ease-in-out;
   }
   
-  .cyber-btn-secondary:hover {
-    @apply bg-primary text-primary-foreground;
-  }
-
-  /* Cyber Card */
-  .cyber-card {
-    @apply bg-surface border-l-4 border-primary p-6 transition-all duration-300;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-  }
-  
-  .cyber-card:hover {
-    box-shadow: var(--glow-lime);
+  .modern-btn-secondary:hover {
+    @apply bg-primary text-primary-foreground border-primary;
     transform: translateY(-2px);
   }
 
+  /* Modern Card */
+  .modern-card {
+    @apply bg-surface border border-primary/10 p-8 rounded-2xl transition-all duration-300;
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .modern-card:hover {
+    @apply border-primary/30;
+    transform: translateY(-4px);
+    box-shadow: var(--glow-yellow);
+  }
+
   /* Glowing text */
-  .cyber-glow {
-    text-shadow: 0 0 10px hsl(var(--cyber-lime) / 0.8);
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.6);
   }
 
   /* Gradient backgrounds */
-  .gradient-cyber {
-    background: var(--gradient-cyber);
+  .gradient-dark {
+    background: var(--gradient-dark);
   }
   
-  .gradient-lime {
-    background: var(--gradient-lime);
+  .gradient-yellow {
+    background: var(--gradient-yellow);
   }
   
   .gradient-accent {
     background: var(--gradient-accent);
   }
+
+  /* Legacy class mappings for compatibility */
+  .cyber-container { @apply modern-container; }
+  .cyber-input { @apply modern-input; }
+  .cyber-btn-primary { @apply modern-btn-primary; }
+  .cyber-btn-secondary { @apply modern-btn-secondary; }
+  .cyber-card { @apply modern-card; }
+  .cyber-glow { @apply text-glow; }
+  .gradient-cyber { @apply gradient-dark; }
+  .gradient-lime { @apply gradient-yellow; }
 }

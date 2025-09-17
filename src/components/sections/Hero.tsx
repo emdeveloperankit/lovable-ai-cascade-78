@@ -44,16 +44,16 @@ const Hero = () => {
       }
     }
   };
-  return <section className="min-h-screen gradient-cyber flex items-center justify-center relative overflow-hidden pt-20 pb-8">
+  return <section className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden pt-20 pb-8">
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
         <motion.div variants={textVariants} initial="hidden" animate="visible" className="mb-6 md:mb-8">
-          <motion.h1 variants={childVariants} className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 text-foreground">
+          <motion.h1 variants={childVariants} className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground leading-tight">
             <TypewriterText text="AI Agents That Scale Your" speed={100} className="block" />
-            <motion.span variants={childVariants} className="text-primary cyber-glow block mt-2">
+            <motion.span variants={childVariants} className="text-primary text-glow block mt-2">
               <TypewriterText text="Business 10x Faster" delay={2000} speed={80} />
             </motion.span>
           </motion.h1>
-          <motion.p variants={childVariants} className="text-base md:text-xl lg:text-2xl text-cyber-blue max-w-4xl mx-auto leading-relaxed">
+          <motion.p variants={childVariants} className="text-lg md:text-xl lg:text-2xl text-neutral-light max-w-4xl mx-auto leading-relaxed">
             <TypewriterText text="We design and deploy AI-powered chatbots, voice agents, and automations that save time and boost conversions." delay={4000} speed={30} />
           </motion.p>
         </motion.div>
@@ -65,7 +65,7 @@ const Hero = () => {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <Button className="cyber-btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-slate-950">
+              <Button className="modern-btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
                 Book Free AI Consultation
               </Button>
             </a>
@@ -76,7 +76,7 @@ const Hero = () => {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <Button className="cyber-btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
+              <Button className="modern-btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
                 WhatsApp Demo
               </Button>
             </a>
@@ -85,17 +85,17 @@ const Hero = () => {
 
         {/* Floating icons */}
         <motion.div variants={iconVariants} initial="hidden" animate="visible" className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto">
-          <motion.div variants={childVariants} className="cyber-card p-4">
-            <Mic className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 bg-inherit" />
-            <p className="text-xs md:text-sm text-lime-400 font-semibold">Voice AI</p>
+          <motion.div variants={childVariants} className="modern-card p-6">
+            <Mic className="w-8 h-8 md:w-10 md:h-10 text-primary mx-auto mb-3" />
+            <p className="text-sm md:text-base text-primary font-semibold">Voice AI</p>
           </motion.div>
-          <motion.div variants={childVariants} className="cyber-card p-4">
-            <Bot className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2" />
-            <p className="text-xs md:text-sm text-lime-400 font-semibold">Chatbots</p>
+          <motion.div variants={childVariants} className="modern-card p-6">
+            <Bot className="w-8 h-8 md:w-10 md:h-10 text-primary mx-auto mb-3" />
+            <p className="text-sm md:text-base text-primary font-semibold">Chatbots</p>
           </motion.div>
-          <motion.div variants={childVariants} className="cyber-card p-4">
-            <Zap className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2" />
-            <p className="text-xs md:text-sm text-lime-400 font-semibold">Automations</p>
+          <motion.div variants={childVariants} className="modern-card p-6">
+            <Zap className="w-8 h-8 md:w-10 md:h-10 text-primary mx-auto mb-3" />
+            <p className="text-sm md:text-base text-primary font-semibold">Automations</p>
           </motion.div>
         </motion.div>
       </div>

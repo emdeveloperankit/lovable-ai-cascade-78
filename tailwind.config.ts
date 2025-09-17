@@ -14,16 +14,16 @@ export default {
     },
     extend: {
       colors: {
-        // Cyber color system
+        // Modern color system (lemon.io style)
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         surface: "hsl(var(--surface))",
         "surface-dark": "hsl(var(--surface-dark))",
-        "cyber-lime": "hsl(var(--cyber-lime))",
-        "cyber-lime-bright": "hsl(var(--cyber-lime-bright))",
-        "cyber-orange": "hsl(var(--cyber-orange))",
-        "cyber-blue": "hsl(var(--cyber-blue))",
-        "cyber-muted": "hsl(var(--cyber-muted))",
+        "lemon-yellow": "hsl(var(--lemon-yellow))",
+        "lemon-yellow-bright": "hsl(var(--lemon-yellow-bright))",
+        "lemon-orange": "hsl(var(--lemon-orange))",
+        "neutral-light": "hsl(var(--neutral-light))",
+        "neutral-muted": "hsl(var(--neutral-muted))",
         
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -58,9 +58,14 @@ export default {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "12px",
+        md: "8px", 
+        sm: "6px",
+        xl: "16px",
+        "2xl": "20px",
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {

@@ -50,7 +50,7 @@ const Navbar = () => {
           x: 0
         }} transition={{
           delay: 0.2
-        }} className="text-2xl font-black text-primary cyber-glow">
+        }} className="text-2xl font-bold text-primary text-glow">
             AGENTICMODE
           </motion.div>
 
@@ -64,7 +64,7 @@ const Navbar = () => {
             y: 0
           }} transition={{
             delay: 0.3 + index * 0.1
-          }} onClick={() => scrollToSection(item.href)} className="text-cyber-blue hover:text-primary transition-colors duration-200 font-semibold">
+          }} onClick={() => scrollToSection(item.href)} className="text-neutral-light hover:text-primary transition-colors duration-300 font-medium">
                 {item.name}
               </motion.button>)}
             <motion.div initial={{
@@ -81,7 +81,7 @@ const Navbar = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <Button className="cyber-btn-primary">Book a call</Button>
+                <Button className="modern-btn-primary">Book a call</Button>
               </a>
             </motion.div>
           </div>
@@ -114,7 +114,7 @@ const Navbar = () => {
         }} transition={{
           duration: 0.3
         }} className="md:hidden overflow-hidden">
-              <div className="cyber-container mt-4 mb-4">
+              <div className="modern-container mt-4 mb-4">
                 <div className="flex flex-col space-y-4">
                   {navItems.map((item, index) => <motion.button key={item.name} initial={{
                 opacity: 0,
@@ -124,7 +124,7 @@ const Navbar = () => {
                 x: 0
               }} transition={{
                 delay: index * 0.1
-              }} onClick={() => scrollToSection(item.href)} className="text-left text-cyber-blue hover:text-primary transition-colors duration-200 font-semibold py-2">
+              }} onClick={() => scrollToSection(item.href)} className="text-left text-neutral-light hover:text-primary transition-colors duration-300 font-medium py-2">
                       {item.name}
                     </motion.button>)}
                   <motion.div initial={{
@@ -142,7 +142,7 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                       className="block"
                     >
-                      <Button className="cyber-btn-primary w-full">
+                      <Button className="modern-btn-primary w-full">
                         Book a Call
                       </Button>
                     </a>
