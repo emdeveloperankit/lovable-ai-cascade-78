@@ -44,10 +44,10 @@ const Hero = () => {
       }
     }
   };
-  return <section className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden pt-20 pb-8">
+  return <section className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden pt-32 pb-8">
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-        <motion.div variants={textVariants} initial="hidden" animate="visible" className="mb-6 md:mb-8">
-          <motion.h1 variants={childVariants} className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground leading-tight">
+        <motion.div variants={textVariants} initial="hidden" animate="visible" className="mb-8 md:mb-12">
+          <motion.h1 variants={childVariants} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-8 text-foreground leading-tight">
             <TypewriterText text="AI Agents That Scale Your" speed={100} className="block" />
             <motion.span variants={childVariants} className="text-primary text-glow block mt-2">
               <TypewriterText text="Business 10x Faster" delay={2000} speed={80} />
