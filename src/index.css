@@ -128,8 +128,7 @@
   }
   
   .modern-container:hover {
-    @apply border-primary/40;
-    box-shadow: var(--glow-yellow);
+    @apply border-primary/20;
   }
 
   /* Modern Input Styles */
@@ -139,8 +138,7 @@
   }
   
   .modern-input:focus {
-    @apply border-primary;
-    box-shadow: var(--glow-yellow);
+    @apply border-primary/60;
   }
 
   /* Modern Button Primary */
@@ -152,8 +150,6 @@
   
   .modern-btn-primary:hover {
     @apply bg-primary/90;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px hsl(var(--primary) / 0.4);
   }
 
   /* Modern Button Secondary */
@@ -163,8 +159,7 @@
   }
   
   .modern-btn-secondary:hover {
-    @apply bg-primary text-primary-foreground border-primary;
-    transform: translateY(-2px);
+    @apply bg-surface/80 border-primary/40;
   }
 
   /* Modern Card */
@@ -174,9 +169,7 @@
   }
   
   .modern-card:hover {
-    @apply border-primary/30;
-    transform: translateY(-4px);
-    box-shadow: var(--glow-yellow);
+    @apply border-primary/20;
   }
 
   /* Glowing text */
